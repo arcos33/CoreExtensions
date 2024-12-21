@@ -1,3 +1,5 @@
+import Foundation
+
 public extension Int {
     /// Convert integer to formatted string with grouping separator
     var formatted: String {

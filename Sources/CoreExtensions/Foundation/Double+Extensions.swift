@@ -1,3 +1,5 @@
+import Foundation
+
 public extension Double {
     /// Round to specified decimal places
     func rounded(to places: Int) -> Double {

@@ -1,9 +1,16 @@
+import Foundation
+
 public extension Date {
     /// Returns date formatted as relative time
     var timeAgo: String {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .full
-        return formatter.localizedString(for: self, relativeTo: Date())
+        if #available(iOS 13.0, macOS 10.15, *) {
+            let formatter = RelativeDateTimeFormatter()
+            formatter.unitsStyle = .full
+            return formatter.localizedString(for: self, relativeTo: Date())
+        } else {
+            // Fallback for earlier versions
+            return "N/A" // or use a different formatting method
+        }
     }
     
     /// Check if date is today
